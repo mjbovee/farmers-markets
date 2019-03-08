@@ -10,10 +10,11 @@ var height = document.querySelector('.content').offsetHeight
 
 var color = d3.scaleLinear()
     .domain([0, 1])
-    .range(['#9bf4cd', '#1f5569'])
+    .range(['#e6deff', '#58508d'])
 
 var projection = d3.geoAlbersUsa()
-    .translate([width / 2, height / 2])
+    .translate([width / 2, height / 2.25])
+    .scale(1750)
 
 
 var path = d3.geoPath()

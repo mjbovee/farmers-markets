@@ -1,6 +1,19 @@
+html, body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.title {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .content {
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
 }
 
 /* font-family: 'Raleway', sans-serif; */
