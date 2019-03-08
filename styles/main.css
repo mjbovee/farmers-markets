@@ -3,6 +3,10 @@ html, body {
     font-family: 'Raleway', sans-serif;
 }
 
+.title, .content {
+    background-color: #f9f9fa;
+}
+
 .title {
     width: 100vw;
     height: 10vh;
