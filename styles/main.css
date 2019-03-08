@@ -3,11 +3,9 @@ html, body {
     font-family: 'Raleway', sans-serif;
 }
 
-.title, .content {
-    background-color: #f9f9fa;
-}
-
 .title {
+    background-color: #ebebee;
+    box-shadow: 1px 1px 5px black;
     width: 100vw;
     height: 10vh;
     display: flex;
@@ -16,6 +14,7 @@ html, body {
 }
 
 .content {
+    background-color: #f9f9fa;
     width: 100vw;
     height: 90vh;
 }

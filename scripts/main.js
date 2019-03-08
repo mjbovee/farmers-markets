@@ -19,13 +19,18 @@ var projection = d3.geoAlbersUsa()
     .translate([width / 2, height / 2.25])
     .scale(1600)
 
-
 var path = d3.geoPath()
     .projection(projection)
 
 var svg = d3.select('.content').append('svg')
     .attr('width', width)
-    .attr('height', height)
+    .attr('height', height )
+    .call(d3.zoom()
+        .scaleExtent([1, 40])
+        .extent([[0, 0], [width, height]])
+        .on('zoom', function() {
+            svg.attr('transform', d3.event.transform)
+        }))
     .append('g')
     .attr('class', 'map')
 
