@@ -1,6 +1,9 @@
 var width = document.querySelector('.content').offsetWidth
 var height = document.querySelector('.content').offsetHeight
 
+d3.select(window).on('resize', resize)
+d3.select('.content').on('resize', resize)
+
 var tip = d3.tip()
     .attr('class', 'd3-tip')
     .offset([-10, 0])
@@ -17,7 +20,7 @@ var color = d3.scaleLinear()
 
 var projection = d3.geoAlbersUsa()
     .translate([width / 2, height / 2.25])
-    .scale(1600)
+    .scale(width)
 
 var path = d3.geoPath()
     .projection(projection)
@@ -33,6 +36,26 @@ var svg = d3.select('.content').append('svg')
         }))
     .append('g')
     .attr('class', 'map')
+
+function resize() {
+    width = parseInt(d3.select('.content').style('width'))
+    width = document.querySelector('.content').offsetWidth
+    height = document.querySelector('.content').offsetHeight
+
+    projection
+        .translate([width / 2, height / 2.25])
+        .scale(width)
+
+    d3.select('.content')
+        .attr('width', width)
+        .attr('height', height)
+
+    d3.select('svg')
+        .attr('width', width)
+        .attr('height', height)
+
+    d3.selectAll('path').attr('d', path)
+}
 
 svg.call(tip)
 
