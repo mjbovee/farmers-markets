@@ -4,3 +4,17 @@
 }
 
 /* font-family: 'Raleway', sans-serif; */
+.d3-tip {
+    line-height: 1.5rem;
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.6);
+    color:'black';
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.details{
+    color:white;
+}
